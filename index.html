@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Utilisation et réflexion autour d’un outil de subversion (Git)</title>
+
+		<meta name="description" content="Utilisation et réflexion autour d’un outil de subversion (Git)">
+		<meta name="author" content="Gaël DEMETTE">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="revealjs/css/reveal.css">
+		<link rel="stylesheet" href="revealjs/css/theme/night.css" id="theme">
+		<style type="text/css">
+			.reveal section img.no-border {
+				border: 0;
+				box-shadow: none;
+				margin: 0;
+				background: none;
+			}
+
+			#gael-icons {
+				position: absolute;
+				bottom: -183px;
+				right: 0;
+				width: 200px;
+				height: 183px;
+				text-align: left;
+			}
+
+			li.show-and-hide, small.show-and-hide {
+				display: none;
+			}
+
+			small.show-and-hide.current-fragment {
+				display: block;
+			}
+
+			li.show-and-hide.current-fragment {
+				display: list-item;
+			}
+		</style>
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'revealjs/css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="revealjs/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<section>
+						<h1>Utilisation et réflexion autour d’un outil de subversion (Git)</h1>
+						<p>
+							<small>Conférence du 14 janvier 2015 @ Supinfo Paris</small>
+						</p>
+					</section>
+					<section>
+						<h1>Votre intervenant</h1>
+						<ul>
+							<li>Etudiant formateur à Supinfo Paris</li>
+							<li>Contributeur opensource</li>
+							<li>"Tech enthusiast"</li>
+						</ul>
+						<div id="gael-icons">
+							<a title="Vers github" href="https://github.com/Nainterceptor/">
+								<img src="img/icons/github.png" alt="github"
+									 class="no-border"/>
+								<small>Nainterceptor</small>
+							</a><br />
+							<a title="Vers LinkedIn" href="http://fr.linkedin.com/pub/ga%C3%ABl-demette/65/2b9/91/">
+								<img src="img/icons/linkedin.png" alt="LinkedIn"
+									 class="no-border"/>
+								<small>Gaël Demette</small>
+							</a><br />
+							<a title="Vers Twitter" href="https://twitter.com/nainterceptor">
+								<img src="img/icons/twitter.png" alt="Twitter"
+									 class="no-border"/>
+								<small>@Nainterceptor</small>
+							</a>
+						</div>
+					</section>
+				</section>
+				<section>
+					<p>Merci à tous</p>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="revealjs/lib/js/head.min.js"></script>
+		<script src="revealjs/js/reveal.js"></script>
+
+		<script type="text/javascript">
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true
+			});
+
+		</script>
+
+	</body>
+</html>
