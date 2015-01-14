@@ -32,6 +32,12 @@
 				height: 183px;
 				text-align: left;
 			}
+			.green {
+				color: green;
+			}
+			.red {
+				color: red;
+			}
 		</style>
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -90,6 +96,258 @@
 					</section>
 				</section>
 				<section>
+					<section>
+						<h1>Vous avez dit subversion ?</h1>
+						<p class="fragment">Oui, mais pas Apache Subversion</p>
+						<p class="fragment"><small>Ne vous inquiétez pas, nous n'allons rien renverser.</small></p>
+					</section>
+					<section>
+						<h2>Répondre à une problématique</h2>
+						<img src="img/new_versions.png" alt="Mozilla versions"/>
+					</section>
+					<section>
+						<h2>Vocabulaire commun</h2>
+						<img src="img/vocab.png" alt="Branch" height="575"/>
+					</section>
+					<section>
+						<h2>Un peu d'histoire</h2>
+						<p>
+							<img src="img/scmhistory.png" alt="Historique des systèmes de gestion de version"/>
+						</p>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th>Date</th>
+									<th>Nom</th>
+									<th>Exemple d'adoptant</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="fragment">
+									<td>1990</td>
+									<td>Concurrent Versions System</td>
+									<td>OpenBSD</td>
+								</tr>
+								<tr class="fragment">
+									<td>2000 CollabNet & Apache 2010</td>
+									<td>Apache Subversion</td>
+									<td>Apache</td>
+								</tr>
+								<tr class="fragment">
+									<td>2005</td>
+									<td>Mercurial</td>
+									<td>Mozilla</td>
+								</tr>
+								<tr class="fragment">
+									<td>2008</td>
+									<td>Bazaar</td>
+									<td>Canonical</td>
+								</tr>
+								<tr class="fragment">
+									<td>2005</td>
+									<td>Git</td>
+									<td>Linux</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h2>Les méthodes de stockage par différenciel</h2>
+						<img src="img/deltas.png" alt="Stockage de deltas"/>
+					</section>
+					<section>
+						<h2>Git, un système de fichiers ?</h2>
+						<img src="img/snapshots.png" alt="Stockage de snapshots"/>
+						<p class="fragment">B-TRee File System</p>
+					</section>
+					<section>
+						<h2>L'intégrité des versions</h2>
+						<ul>
+							<li class="fragment">Hash</li>
+							<li class="fragment">CRLF</li>
+							<li class="fragment">Contrôle humain</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Ok, ok : Git</h2>
+						<ul>
+							<li class="fragment">A l'initiative de Linus Torvalds</li>
+							<li class="fragment">Maintenant : Junio Hamano</li>
+							<li class="fragment">Créé un dossier .git, voire des fichiers .git*</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Workflow git</h2>
+						<img src="img/workflow.png" alt="Workflow Git"/>
+						<p class="fragment">Et mon Ctrl + S ?</p>
+					</section>
+					<section>
+						<h2>Questions ?</h2>
+					</section>
+					<section>
+						<h2>One more thing</h2>
+						<img src="img/Github2.png" alt="Git != github"/>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Utilisation de Git</h1>
+					</section>
+					<section>
+						<h2>Configuration</h2>
+						<pre><code><span class="fragment">$ git config --global user.name "Foo Bar"</span>
+<span class="fragment">$ git config --global user.email foo@bar.com</span></code></pre>
+						<p class="fragment">Sauvegarde un .gitconfig</p>
+					</section>
+					<section>
+						<h2>Création d'un dépot</h2>
+						<pre><code>$ git init<span class="fragment"> [--bare]</span></code></pre>
+						<pre class="fragment"><code>Initialized empty Git repository in /.git/
+<span class="green">Success!</span></code></pre>
+						<ul>
+							<li class="fragment">Créé le .git</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Tracker un fichier</h2>
+						<pre><code>$ touch foo.txt
+<span class="fragment">$ git status</span>
+<span class="fragment"># On branch master
+#
+# Initial commit
+#
+# Untracked files:
+# (use "git add [file]..." to include in what will be committed)
+#
+# <span class="red">foo.txt</span>
+nothing added to commit but untracked files present (use "git add" to track)</span>
+							</code></pre>
+					</section>
+					<section>
+						<h2>Petit rappel</h2>
+						<img src="img/workflow.png" alt="Workflow Git"/>
+					</section>
+					<section>
+						<pre><code><span class="fragment">$ git add foo.txt</span>
+<span class="fragment">$ git status</span>
+<span class="fragment"># On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+# (use "git rm --cached [file]..." to unstage)
+#
+# 
+<div class="green">new file: foo.txt</div></span></code></pre>
+					</section>
+					<section>
+						<h2>Faire un commit</h2>
+						<pre><code>$ git commit -m "My first commit"
+<span class="fragment">[master (root-commit) [hexKey]] My first commit
+1 file changed, 1 insertion(+)
+create mode 100644 foo.txt
+
+<span class="green">Success!</span></span></code></pre>
+					</section>
+					<section>
+						<h2>Suppression</h2>
+						<pre><code><span class="fragment">$ git rm foo.txt</span>
+<span class="fragment">rm 'foo.txt'</span>
+<span class="fragment">$ git commit -m "foo a été supprimé"</span></code></pre>
+					</section>
+					<section>
+						<h2>Petit rappel</h2>
+						<img src="img/workflow.png" alt="Workflow Git"/>
+					</section>
+					<section>
+						<h2>Voir les récents commits</h2>
+						<pre><code>$ git log
+<span class="fragment">commit [code hexa]
+Author: Foo Bar foo@bar.com
+Date: Sat Jan 14 19:30:00 2015 -0500
+
+My first commit</span></code></pre>
+					</section>
+					<section>
+						<h2>Configurer un dépot</h2>
+						<pre><code>$ git remote add origin ~/baredRepository.git
+<span class="fragment">$ git push --set-upstream origin master</span>
+<span class="fragment">Branch master set up to track remote branch master from origin.</span></code></pre>
+					</section>
+					<section>
+						<h2>Petit rappel</h2>
+						<img src="img/workflow.png" alt="Workflow Git"/>
+					</section>
+					<section>
+						<h2>Récupération des changements</h2>
+						<pre><code>$ git pull origin master
+<span class="fragment">Updating [code hexa]
+Fast-forward
+foo.txt | 1 +
+1 file changed, 1 insertion(+)
+create mode 100644 bar.txt</span></code></pre>
+					</section>
+					<section>
+						<h2>Voir les différences</h2>
+						<pre><code>$ git diff HEAD
+<span class="fragment">diff --git a/foo.txt b/foo.txt
+index [Codes hexa]
+--- a/foo.txt
++++ b/foo.txt
+@@ -1 +1 @@
+<span class="green">+I'm Foo !</span></span></code></pre>
+					</section>
+					<section>
+						<h2>Reset une donnée ajoutée</h2>
+						<pre><code><span class="fragment">$ touch bar.txt</span>
+<span class="fragment">$ git add bar.txt</span>
+<span class="fragment">$ git reset bar.txt</span>
+<span class="fragment">$ git checkout -- bar.txt</span></code></pre>
+					</section>
+					<section>
+						<h2>Le stash !</h2>
+						<p>Un espace "en dehors" de tout ça</p>
+						<pre><code><span class="fragment">$ git stash</span>
+<span class="fragment">$ git stash apply</span></code></pre>
+					</section>
+					<section>
+						<h2>Agrandissons l'arbre</h2>
+						<pre><code><span class="fragment">$ git branch MaBranche</span>
+<span class="fragment">$ git checkout MaBranche</span>
+<span class="fragment">($ git checkout -b MaBranche)</span>
+<span class="fragment">Switched to branch 'clean_up'</span></code></pre>
+					</section>
+					<section>
+						<h2>Petit rappel</h2>
+						<img src="img/vocab.png" alt="Branch" height="575"/>
+					</section>
+					<section>
+						<h2>Elaguons un peu</h2>
+						<pre><code><span class="fragment">$ git checkout master</span>
+<span class="fragment">$ git merge MaBranche</span>
+<span class="fragment">
+Updating [code hexa]
+Fast-forward
+[Résumé]</span>
+<span class="fragment">$ git branch -d MaBranche</span>
+<span class="fragment">$ git push</span></code></pre>
+					</section>
+					<section>
+						<h2>Petit rappel</h2>
+						<img src="img/vocab.png" alt="Branch" height="575"/>
+					</section>
+					<section>
+						<h2>Questions ?</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>La gestion de projet avec un outil de subversion</h1>
+					</section>
+				</section>
+				<section>
 					<p>Merci à tous</p>
 				</section>
 			</div>
@@ -104,7 +362,17 @@
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				history: true
+				history: true,
+				multiplex: {
+					// Example values. To generate your own, see the socket.io server instructions.
+					secret: null,
+					id: '47802767e0bba11d',
+					url: '127.0.0.1:1948'
+				},
+				dependencies: [
+					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js' },
+					{ src: 'revealjs/plugin/multiplex/client.js' }
+				]
 			});
 
 		</script>
