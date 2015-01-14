@@ -346,8 +346,89 @@ Fast-forward
 					<section>
 						<h1>La gestion de projet avec un outil de subversion</h1>
 					</section>
+					<section>
+						<h2>Bien choisir son fournisseur de service</h2>
+						<ul>
+							<li class="fragment">Gitolite</li>
+							<li class="fragment">Github</li>
+							<li class="fragment">Bitbucket</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Lier son dépot avec un outil de gestion de projet</h2>
+						<ul>
+							<li class="fragment">Redmine</li>
+							<li class="fragment">Github</li>
+							<li class="fragment">Atlassian</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Outil de contrôle : Statistiques</h2>
+						<img src="img/commitsFrequency.png" alt="Fréquence de commits" height="575"/>
+					</section>
+					<section>
+						<img src="img/mostCommiters.png" alt="Plus grands contributeurs" height="575"/>
+					</section>
+					<section>
+						<h2>Utilité du contrôle statistique</h2>
+						<ul>
+							<li class="fragment">Un point semble-t-il bloquant ?</li>
+							<li class="fragment">Le projet avance-t-il ?</li>
+							<li class="fragment">Cibler les codes facilement et difficilement maintenables</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Sans GUI</h2>
+						<ul>
+							<li class="fragment">Commits par auteur <code>git shortlog -sn --no-merges</code></li>
+							<li class="fragment">GitStats</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Lier tâches et commits</h2>
+						<ul>
+							<li class="fragment">fixes #ID</li>
+							<li class="fragment">refs #ID</li>
+						</ul>
+						<p class="fragment">
+							<img src="img/linksGithub.png" alt="Lier avec Github"/>
+							<img src="img/linksRedmine.png" alt="Lier avec Redmine"/>
+						</p>
+					</section>
+					<section>
+						<h2>Les hooks</h2>
+						<p class="fragment">Effectuer une action à un moment du workflow</p>
+						<ul>
+							<li class="fragment">pre-receive</li>
+							<li class="fragment">post-receive</li>
+							<li class="fragment">update</li>
+							<li class="fragment">...</li>
+						</ul>
+					</section>
+					<section>
+						<h2>[Déploiement, Intégration, Livraison] continue</h2>
+						<img src="img/continuous-integration.png" alt="Intégration continue"/>
+					</section>
+					<section>
+						<h2>Visualiser les branches</h2>
+						<img src="img/cheminDeFer.png" alt="Chemin de fer" />
+					</section>
+					<section>
+						<h2>Revue de code</h2>
+						<img src="img/revueDeCode.png" alt="Revue de code"/>
+					</section>
+					<section>
+						<h2>Tags & releases</h2>
+						<pre class="fragment"><code>git tag -a v0.5.4 -m 'Ma version'</code></pre>
+						<p class="fragment">Reconnu par des outils de gestion de dépendances</p>
+						<p class="fragment">Possibilité de signer une étiquette</p>
+					</section>
+					<section>
+						<h2>Questions ?</h2>
+					</section>
 				</section>
 				<section>
+					<h1>Fin</h1>
 					<p>Merci à tous</p>
 				</section>
 			</div>
@@ -366,11 +447,11 @@ Fast-forward
 				multiplex: {
 					// Example values. To generate your own, see the socket.io server instructions.
 					secret: null,
-					id: '47802767e0bba11d',
-					url: '127.0.0.1:1948'
+					id: '68c4af5435c5e839',
+					url: '192.168.2.2:1948'
 				},
 				dependencies: [
-					{ src: 'http://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js' },
+					{ src: 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.17/socket.io.min.js' },
 					{ src: 'revealjs/plugin/multiplex/client.js' }
 				]
 			});
